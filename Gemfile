@@ -39,6 +39,9 @@ gem 'devise'
 # Use mysql2 as the database for Active Record
 gem "mysql2", "~> 0.3.14"
 
+# icons
+gem "font-awesome-rails"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

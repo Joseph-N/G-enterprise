@@ -5,9 +5,8 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <%= csrf_meta_tags %>
 
-    <title><%= yield :title %></title>
+    <title>Login | Grace Enterprise</title>
 
     <!-- Core CSS - Include with every page -->
     <%= stylesheet_link_tag    "application", media: "all" %>
@@ -16,21 +15,11 @@
 
 <body>
 
-    <div id="wrapper">
-
-        <%= render 'layouts/navigation' %>
-
-
-        <div id="page-wrapper">
-            <div class="row">
-            	<%= yield %>
-            </div>
-            <!-- /.row -->
+    <div class="container">
+        <div class="row">
+            <%= yield %>
         </div>
-        <!-- /#page-wrapper -->
-
     </div>
-    <!-- /#wrapper -->
 
     <!-- Core Scripts - Include with every page -->
     <%= javascript_include_tag "application" %>
@@ -38,14 +27,3 @@
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-

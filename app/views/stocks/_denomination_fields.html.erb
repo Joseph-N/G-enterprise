@@ -1,0 +1,26 @@
+<div class="row">
+	<div class="col-md-4">
+		<div class="form-group">
+			<%= f.label :name %>
+			<%= f.select :name, [ 'Bamba 10', 'Bamba 20', 'Bamba 50', 'Bamba 100', 'Bamba 250', 'Bamba 500', 'Bamba 1000'], { :prompt => 'Pick One' }, { class: "form-control" } %>
+		</div>
+	</div>
+	<div class="col-md-3">
+		<div class="form-group">
+			<%= f.label :quantity %>
+			<%= f.text_field :quantity, class: "form-control" %>
+		</div>
+	</div>
+	<div class="col-md-3">
+		<div class="form-group">
+			<%= f.label :buying_price %>
+			<%= f.text_field :buying_price, class: "form-control" %>
+		</div>
+	</div>
+	<div class="col-md-2">
+		<div class="form-group" style="margin-top: 30px;" >
+			<%= f.hidden_field :_destroy %>
+			<%= link_to_function raw("<i class='fa fa-times'></i> remove"), "remove_fields(this)" %>
+		</div>
+	</div>
+</div>

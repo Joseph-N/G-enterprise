@@ -1,0 +1,25 @@
+<div class="col-md-12">
+	<h2><i class="fa fa-shopping-cart"></i> New Stock</h2>
+	<hr>
+	<%= form_for @stock, html: { role: "form" } do |f| %>
+		<div class="form-group">
+			<%= f.label :name %>
+			<%= f.text_field :name, class: "form-control", value: "stock-#{Date.today}" %>
+		</div>
+		<div class="row">
+
+			<%= f.fields_for :providers do |builder| %>
+
+					<%= render 'provider_fields', :f => builder %>
+
+			<% end %>
+		</div>
+		<div class="form-group">
+			<%= link_to_add_fields raw("<i class='fa fa-plus-circle'></i> Add Providers"), f, :providers %>
+		</div>
+
+		<div class="form-group" style="clear: both;">
+				<%= f.submit "Register Order", class: "btn btn-success btn-lg  up-40" %>
+		</div>
+	<% end %>
+</div>

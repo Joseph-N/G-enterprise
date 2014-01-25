@@ -1,0 +1,24 @@
+<div class="col-md-6">
+	<div class="panel panel-default">
+	    <div class="panel-heading">
+	        <i class="fa fa-sitemap"></i> Provider
+	    </div>
+	    <!-- /.panel-heading -->
+	    <div class="panel-body">
+		    <div class="form-group">
+		    	<%= f.select :name, [ 'Safaricom', 'Airtel', 'Orange', 'Yu'], { :prompt => 'Select Provider' }, { class: "form-control" } %>
+			</div>
+
+
+			<legend><i class="fa fa-ticket"></i> Denominations</legend>
+			<%= f.fields_for :denominations do |builder| %>
+				<%= render 'denomination_fields', :f => builder %>
+			<% end %>
+			<div class="form-group">
+				<%= link_to_add_fields raw("<i class='fa fa-plus-circle'></i> Add Denomination"), f, :denominations %>
+			</div>
+	        
+	    </div>
+	    <!-- /.panel-body -->
+	</div>
+</div>

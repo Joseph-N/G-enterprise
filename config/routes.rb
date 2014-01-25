@@ -1,7 +1,19 @@
 GEnterprise::Application.routes.draw do
   devise_for :admins
 
-  root 'dashboard#index'
+  authenticated :admin do
+    root 'dashboard#index'
+  end
+
+  unauthenticated :admin do
+    devise_scope :admin do
+      get "/" => "devise/sessions#new"
+    end
+  end
+
+  resources :stocks
+
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
